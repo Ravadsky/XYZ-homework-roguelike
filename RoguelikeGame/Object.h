@@ -1,5 +1,6 @@
 #pragma once
-#include "CoreMinimal.h"
+#include "SFML/Graphics.hpp"
+#include "SFML/Audio.hpp"
 
 namespace RoguelikeGame
 {

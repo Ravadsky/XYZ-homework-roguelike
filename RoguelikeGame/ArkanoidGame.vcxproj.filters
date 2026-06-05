@@ -52,9 +52,6 @@
     <ClCompile Include="Text.cpp">
       <Filter>Sources\Utilities</Filter>
     </ClCompile>
-    <ClCompile Include="Object.cpp">
-      <Filter>Sources\SceneObjects</Filter>
-    </ClCompile>
     <ClCompile Include="Menu.cpp">
       <Filter>Sources\Utilities</Filter>
     </ClCompile>
@@ -95,9 +92,6 @@
     </ClInclude>
     <ClInclude Include="Text.h">
       <Filter>Sources\Utilities</Filter>
-    </ClInclude>
-    <ClInclude Include="Object.h">
-      <Filter>Sources\SceneObjects</Filter>
     </ClInclude>
     <ClInclude Include="Menu.h">
       <Filter>Sources\Utilities</Filter>

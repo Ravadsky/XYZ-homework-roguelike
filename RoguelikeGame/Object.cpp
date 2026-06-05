@@ -1,11 +1,10 @@
+#include "pch.h"
 #include "Object.h"
 
 namespace RoguelikeGame
 {
 	Object::Object(sf::Vector2f Position)
 	{
-		SetSize(BASE_SPRITE_SCALE, BASE_SPRITE_SCALE);
-
 		ObjectPosition = Position;
 		ObjectSprite.setPosition(ObjectPosition);
 	}
