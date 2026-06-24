@@ -5,15 +5,13 @@
 #include "Text.h"
 #include <sstream>
 
-#include "AssetController.h"
-
 namespace RoguelikeGame
 {
 	GameStateGameOverData::GameStateGameOverData() : GameStateBase()
 	{
 		timeSinceGameOver = 0.f;
 
-		gameOverText.setFont(GetAssetFont());
+		//gameOverText.setFont(GetAssetFont());
 		gameOverText.setCharacterSize(48);
 		gameOverText.setStyle(sf::Text::Bold);
 		gameOverText.setFillColor(sf::Color::Red);
@@ -21,7 +19,7 @@ namespace RoguelikeGame
 
 		Game& game = Application::Instance().GetGame();
 
-		hintText.setFont(GetAssetFont());
+		//hintText.setFont(GetAssetFont());
 		hintText.setCharacterSize(24);
 		hintText.setFillColor(sf::Color::White);
 		hintText.setString("Press Space to restart\nEsc to exit to main menu");

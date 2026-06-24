@@ -14,12 +14,6 @@
     <Filter Include="Sources\Utilities">
       <UniqueIdentifier>{b642feb9-c8b0-4177-a7db-6df73fc251c7}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Sources\SceneObjects">
-      <UniqueIdentifier>{6698294f-9581-4ae0-af39-c70e1354da63}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Sources\UI">
-      <UniqueIdentifier>{c09082d9-6236-4c68-87ed-2bc354c351a2}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GameStateGameOver.cpp">
@@ -55,11 +49,11 @@
     <ClCompile Include="Menu.cpp">
       <Filter>Sources\Utilities</Filter>
     </ClCompile>
-    <ClCompile Include="AssetController.cpp">
-      <Filter>Sources\Core</Filter>
+    <ClCompile Include="Player.cpp">
+      <Filter>Sources</Filter>
     </ClCompile>
-    <ClCompile Include="Textbox.cpp">
-      <Filter>Sources\UI</Filter>
+    <ClCompile Include="DeveloperLevel.cpp">
+      <Filter>Sources</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -96,14 +90,12 @@
     <ClInclude Include="Menu.h">
       <Filter>Sources\Utilities</Filter>
     </ClInclude>
-    <ClInclude Include="AssetController.h">
-      <Filter>Sources\Core</Filter>
-    </ClInclude>
-    <ClInclude Include="Textbox.h">
-      <Filter>Sources\UI</Filter>
-    </ClInclude>
     <ClInclude Include="CoreMinimal.h">
       <Filter>Sources\Core</Filter>
     </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>Sources</Filter>
+    </ClInclude>
+    <ClInclude Include="DeveloperLevel.h" />
   </ItemGroup>
 </Project>

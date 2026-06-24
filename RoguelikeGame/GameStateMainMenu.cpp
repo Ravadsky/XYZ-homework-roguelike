@@ -3,44 +3,42 @@
 #include "Application.h"
 #include "Game.h"
 
-#include "AssetController.h"
-
 namespace RoguelikeGame
 {
 	GameStateMainMenuData::GameStateMainMenuData() : GameStateBase()
 	{
 		MenuItem startGame;
-		startGame.SetTextParameters(true, "Start Game", GetAssetFont(), 24);
+		//startGame.SetTextParameters(true, "Start Game", GetAssetFont(), 24);
 		startGame.SetCallbackFunction([](MenuItem&) {
 			Application::Instance().GetGame().SwitchStateTo(GameStateType::Playing);
 			});
 
 		MenuItem options;
-		options.SetTextParameters(true, "Options", GetAssetFont(), 24);
-		options.SetTextParameters(false, "Options", GetAssetFont(), 48, sf::Color::Red);
+		//options.SetTextParameters(true, "Options", GetAssetFont(), 24);
+		//options.SetTextParameters(false, "Options", GetAssetFont(), 48, sf::Color::Red);
 		options.SetPositionParameters(Orientation::Vertical, Alignment::Middle, 10.f);
 
 		MenuItem yesItem;
-		yesItem.SetTextParameters(true, "Yes", GetAssetFont(), 24);
+		//yesItem.SetTextParameters(true, "Yes", GetAssetFont(), 24);
 		yesItem.SetCallbackFunction([](MenuItem&) {
 			Application::Instance().GetGame().SwitchStateTo(GameStateType::None);
 			});
 
 		MenuItem noItem;
-		noItem.SetTextParameters(true, "No", GetAssetFont(), 24);
+		//noItem.SetTextParameters(true, "No", GetAssetFont(), 24);
 		noItem.SetCallbackFunction([this](MenuItem&) {this->menu.GoBack();
 			});
 
 		MenuItem exitGameItem;
-		exitGameItem.SetTextParameters(true, "Exit Game", GetAssetFont(), 24);
-		exitGameItem.SetTextParameters(false, "Are you sure?", GetAssetFont(), 48, sf::Color::Red);
+		//exitGameItem.SetTextParameters(true, "Exit Game", GetAssetFont(), 24);
+		//exitGameItem.SetTextParameters(false, "Are you sure?", GetAssetFont(), 48, sf::Color::Red);
 		exitGameItem.SetPositionParameters(Orientation::Horizontal, Alignment::Middle, 10.f);
 
 		exitGameItem.AttachChild(yesItem);
 		exitGameItem.AttachChild(noItem);
 
 		MenuItem mainMenu;
-		mainMenu.SetTextParameters(false, "ROGUELIKE", GetAssetFont(), 48, sf::Color::Red);
+		//mainMenu.SetTextParameters(false, "ROGUELIKE", GetAssetFont(), 48, sf::Color::Red);
 		mainMenu.SetPositionParameters(Orientation::Vertical, Alignment::Middle, 10.f);
 
 		mainMenu.AttachChild(startGame);

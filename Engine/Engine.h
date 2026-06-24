@@ -1,17 +1,16 @@
 #pragma once
-#ifndef ENGINE_H
-#define ENGINE_H
-#ifdef ENGINE_EXPORTS
-#define ENGINE_API __declspec(dllexport)
-#else
-#define ENGINE_API __declspec(dllimport)
-#endif
+#include "EngineAPI.h"
 
 class ENGINE_API Engine
 {
 public:
-	Engine();
-	void Init();
+	static Engine* Instance();
+
 	void Run();
+
+	Engine(const Engine& app) = delete;
+	Engine& operator=(const Engine&) = delete;
+private:
+	Engine();
+	~Engine() = default;
 };
-#endif

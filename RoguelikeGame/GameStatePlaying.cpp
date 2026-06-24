@@ -5,8 +5,6 @@
 #include "Text.h"
 #include <sstream>
 
-#include "AssetController.h"
-
 namespace RoguelikeGame
 {
 	GameStatePlayingData::GameStatePlayingData() : GameStateBase()

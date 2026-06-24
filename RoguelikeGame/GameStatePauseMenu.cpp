@@ -2,8 +2,6 @@
 #include "Application.h"
 #include "Game.h"
 
-#include "AssetController.h"
-
 namespace RoguelikeGame
 {
 	GameStatePauseMenuData::GameStatePauseMenuData() : GameStateBase()
@@ -11,18 +9,17 @@ namespace RoguelikeGame
 		background.setFillColor(sf::Color(0, 0, 0, 128)); // Semi-transparent black
 
 		titleText.setString("Pause");
-		titleText.setFont(GetAssetFont());
 		titleText.setCharacterSize(48);
 		titleText.setFillColor(sf::Color::Red);
 
 		MenuItem resumeItem;
-		resumeItem.SetTextParameters(true, "Return to game", GetAssetFont(), 24);
+		//resumeItem.SetTextParameters(true, "Return to game", GetAssetFont(), 24);
 		resumeItem.SetCallbackFunction([](MenuItem&) {
 			Application::Instance().GetGame().PopState();
 			});
 
 		MenuItem exitItem;
-		exitItem.SetTextParameters(true, "Exit to main menu", GetAssetFont(), 24);
+		//exitItem.SetTextParameters(true, "Exit to main menu", GetAssetFont(), 24);
 		exitItem.SetCallbackFunction([](MenuItem&) {
 			Application::Instance().GetGame().SwitchStateTo(GameStateType::MainMenu);
 			});

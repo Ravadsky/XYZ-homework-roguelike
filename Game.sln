@@ -11,6 +11,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RoguelikeGame", "RoguelikeG
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Engine", "Engine\Engine.vcxproj", "{29CF183F-89E9-45E6-8ECD-08CBE1D7E4E7}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "EngineTests", "EngineTests\EngineTests.vcxproj", "{8394E5F2-6480-4F0F-AD82-26FBCEDC38E3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -51,6 +53,14 @@ Global
 		{29CF183F-89E9-45E6-8ECD-08CBE1D7E4E7}.Release|x64.Build.0 = Release|x64
 		{29CF183F-89E9-45E6-8ECD-08CBE1D7E4E7}.Release|x86.ActiveCfg = Release|Win32
 		{29CF183F-89E9-45E6-8ECD-08CBE1D7E4E7}.Release|x86.Build.0 = Release|Win32
+		{8394E5F2-6480-4F0F-AD82-26FBCEDC38E3}.Debug|x64.ActiveCfg = Debug|x64
+		{8394E5F2-6480-4F0F-AD82-26FBCEDC38E3}.Debug|x64.Build.0 = Debug|x64
+		{8394E5F2-6480-4F0F-AD82-26FBCEDC38E3}.Debug|x86.ActiveCfg = Debug|Win32
+		{8394E5F2-6480-4F0F-AD82-26FBCEDC38E3}.Debug|x86.Build.0 = Debug|Win32
+		{8394E5F2-6480-4F0F-AD82-26FBCEDC38E3}.Release|x64.ActiveCfg = Release|x64
+		{8394E5F2-6480-4F0F-AD82-26FBCEDC38E3}.Release|x64.Build.0 = Release|x64
+		{8394E5F2-6480-4F0F-AD82-26FBCEDC38E3}.Release|x86.ActiveCfg = Release|Win32
+		{8394E5F2-6480-4F0F-AD82-26FBCEDC38E3}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

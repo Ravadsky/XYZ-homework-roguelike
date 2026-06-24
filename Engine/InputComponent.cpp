@@ -1,0 +1,43 @@
+#include "pch.h"
+#include "InputComponent.h"
+
+InputComponent::InputComponent(Object* gameObject) : Component(gameObject)
+{
+}
+
+void InputComponent::Update(float deltaTime)
+{
+	verticalAxis = 0.f;
+	horizontalAxis = 0.f;
+
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))
+	{
+		verticalAxis += 1.0f;
+	}
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::S))
+	{
+		verticalAxis -= 1.0f;
+	}
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
+	{
+		horizontalAxis += 1.0f;
+	}
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
+	{
+		horizontalAxis -= 1.0f;
+	}
+}
+
+void InputComponent::Render()
+{
+}
+
+float InputComponent::getHorizontalAxis() const
+{
+	return horizontalAxis;
+}
+
+float InputComponent::getVerticalAxis() const
+{
+	return verticalAxis;
+}

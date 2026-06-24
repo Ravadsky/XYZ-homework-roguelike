@@ -4,9 +4,12 @@
 #include "CoreMinimal.h"
 #include "Application.h"
 
-#include "Engine.h"
+#include <Engine.h>
 #include <Windows.h>
 #include <iostream>
+#include <RenderSystem.h>
+#include <ResourceSystem.h>
+#include "DeveloperLevel.h"
 
 using namespace RoguelikeGame;
 
@@ -23,10 +26,14 @@ int main()
 		std::cerr << "cannot capture console" << std::endl;
 	}
 
-	Engine engine;
-	engine.Init(); engine.Run();
+	sf::RenderWindow window(sf::VideoMode(1280, 720), "XYZ_Roguelike");
+	RenderSystem::Instance()->SetMainWindow(&window);
+	ResourceSystem::Instance()->LoadTexture("ball", "Resources/Textures/ball.png");
 
-	Application::Instance().Run();
+	auto developerLevel = std::make_shared<DeveloperLevel>();
+	developerLevel->Start();
+
+	Engine::Instance()->Run();
 
 	return 0;
 }
