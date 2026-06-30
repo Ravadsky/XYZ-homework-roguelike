@@ -52,7 +52,7 @@ void AudioSystem::PlaySound(std::string name)
 			auto sound = std::make_unique<sf::Sound>();
 			sound->setBuffer(*buffer);
 			sound->play();
-			sound->setVolume(20.0f);
+			sound->setVolume(8.0f);
 			sound->setLoop(false);
 
 			globalSounds.push_back(std::move(sound));

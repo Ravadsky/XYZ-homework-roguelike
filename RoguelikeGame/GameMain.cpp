@@ -33,6 +33,7 @@ int main()
 	GetResourceSystem()->LoadTexture("Player", "Resources/Textures/Player.png", false);
 	GetResourceSystem()->LoadTexture("Orc", "Resources/Textures/Orc.png", false);
 	GetResourceSystem()->LoadTexture("Wall", "Resources/Textures/Wall.png", false);
+	GetResourceSystem()->LoadTexture("Floor", "Resources/Textures/Floor.png", false);
 
 	GetResourceSystem()->LoadSoundBuffer("Hit", "Resources/Sounds/Hit.wav");
 	GetResourceSystem()->LoadSoundBuffer("Death", "Resources/Sounds/Death.wav");

@@ -1,10 +1,8 @@
 #include "Enemy.h"
 #include <World.h>
 #include <Object.h>
-#include <InputComponent.h>
 #include <ResourceSystem.h>
 #include <SpriteRendererComponent.h>
-#include <CameraComponent.h>
 #include <RenderSystem.h>
 #include <TransformComponent.h>
 #include <PursuitComponent.h>
