@@ -2,6 +2,8 @@
 #include "EngineAPI.h"
 #include "SFML/Graphics.hpp"
 
+#define GetRenderSystem() RenderSystem::Instance()
+
 class ENGINE_API RenderSystem
 {
 public:

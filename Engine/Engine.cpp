@@ -22,28 +22,29 @@ void Engine::Run()
 	sf::Clock gameClock;
 	sf::Event event;
 
-	while (RenderSystem::Instance()->GetMainWindow().isOpen())
+	while (GetRenderSystem()->GetMainWindow().isOpen())
 	{
 		sf::Time dt = gameClock.restart();
 		float deltaTime = dt.asSeconds();
 
-		while (RenderSystem::Instance()->GetMainWindow().pollEvent(event))
+		while (GetRenderSystem()->GetMainWindow().pollEvent(event))
 		{
 			if (event.type == sf::Event::Closed)
 			{
-				RenderSystem::Instance()->GetMainWindow().close();
+				GetRenderSystem()->GetMainWindow().close();
 			}
 		}
-		if (!RenderSystem::Instance()->GetMainWindow().isOpen())
+		if (!GetRenderSystem()->GetMainWindow().isOpen())
 		{
 			break;
 		}
 
-		RenderSystem::Instance()->GetMainWindow().clear();
-		World::Instance()->Update(deltaTime);
-		World::Instance()->Render();
-		World::Instance()->LateUpdate();
-		RenderSystem::Instance()->GetMainWindow().display();
+		GetRenderSystem()->GetMainWindow().clear();
+		GetWorld()->Update(deltaTime);
+		GetWorld()->FixedUpdate(deltaTime);
+		GetWorld()->Render();
+		GetWorld()->LateUpdate();
+		GetRenderSystem()->GetMainWindow().display();
 	}
 
 }

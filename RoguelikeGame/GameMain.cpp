@@ -10,6 +10,7 @@
 #include <RenderSystem.h>
 #include <ResourceSystem.h>
 #include "DeveloperLevel.h"
+#include <AudioSystem.h>
 
 using namespace RoguelikeGame;
 
@@ -27,13 +28,22 @@ int main()
 	}
 
 	sf::RenderWindow window(sf::VideoMode(1280, 720), "XYZ_Roguelike");
-	RenderSystem::Instance()->SetMainWindow(&window);
-	ResourceSystem::Instance()->LoadTexture("ball", "Resources/Textures/ball.png");
+	GetRenderSystem()->SetMainWindow(&window);
+
+	GetResourceSystem()->LoadTexture("Player", "Resources/Textures/Player.png", false);
+	GetResourceSystem()->LoadTexture("Orc", "Resources/Textures/Orc.png", false);
+	GetResourceSystem()->LoadTexture("Wall", "Resources/Textures/Wall.png", false);
+
+	GetResourceSystem()->LoadSoundBuffer("Hit", "Resources/Sounds/Hit.wav");
+	GetResourceSystem()->LoadSoundBuffer("Death", "Resources/Sounds/Death.wav");
+
+
+	GetAudioSystem()->LoadAndPlayMusic("Resources/Music/MainTheme.wav");
 
 	auto developerLevel = std::make_shared<DeveloperLevel>();
 	developerLevel->Start();
 
-	Engine::Instance()->Run();
+	GetEngine()->Run();
 
 	return 0;
 }

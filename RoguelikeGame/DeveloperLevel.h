@@ -3,6 +3,7 @@
 #include <memory>
 
 #include "Player.h"
+#include "Enemy.h"
 
 namespace RoguelikeGame
 {
@@ -16,6 +17,7 @@ namespace RoguelikeGame
 
     private:
         std::shared_ptr<Player> player;
+        std::shared_ptr<Enemy> orc;
     };
 
 }

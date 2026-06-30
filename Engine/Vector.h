@@ -50,6 +50,15 @@
 		{
 			return { x * vector.x + y * vector.y };
 		}
+		inline Vector2D<T> Normalize()
+		{
+			float length = sqrt(x * x + y * y);
+
+			if (length != 0.0f)
+				return Vector2D<T>(x / length, y / length);
+			else
+				return Vector2D<T>(0.0f, 0.0f);
+		}
 
 	};
 

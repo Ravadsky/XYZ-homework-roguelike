@@ -116,6 +116,47 @@ void ResourceSystem::Clear()
 {
 	DeleteAllTextures();
 	DeleteAllTextureMaps();
+	DeleteAllSoundBuffers();
+}
+
+void ResourceSystem::LoadSoundBuffer(const std::string& name, std::string sourcePath)
+{
+	if (soundBuffers.find(name) != soundBuffers.end())
+		return;
+
+	sf::SoundBuffer* newSoundBuffer = new sf::SoundBuffer();
+	if (newSoundBuffer->loadFromFile(sourcePath))
+	{
+		soundBuffers.emplace(name, newSoundBuffer);
+	}
+}
+
+sf::SoundBuffer* ResourceSystem::GetSoundBufferShared(const std::string& name) const
+{
+	return soundBuffers.find(name)->second;
+
+}
+
+void ResourceSystem::DeleteSoundBuffer(std::string& key)
+{
+	auto SoundBufferPair = soundBuffers.find(key);
+
+	sf::SoundBuffer* deletingSoundBuffer = SoundBufferPair->second;
+	soundBuffers.erase(SoundBufferPair);
+	delete deletingSoundBuffer;
+}
+
+void ResourceSystem::DeleteAllSoundBuffers()
+{
+	std::vector<std::string> keysToDelete;
+	for (const auto& SoundBufferPair : soundBuffers)
+	{
+		keysToDelete.push_back(SoundBufferPair.first);
+	}
+	for (std::string& key : keysToDelete)
+	{
+		DeleteSoundBuffer(key);
+	}
 }
 
 void ResourceSystem::DeleteAllTextures()

@@ -1,6 +1,8 @@
 #pragma once
 #include "EngineAPI.h"
 
+#define GetEngine() Engine::Instance()
+
 class ENGINE_API Engine
 {
 public:

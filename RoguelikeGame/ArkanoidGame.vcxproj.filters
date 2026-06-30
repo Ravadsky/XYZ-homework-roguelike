@@ -14,6 +14,15 @@
     <Filter Include="Sources\Utilities">
       <UniqueIdentifier>{b642feb9-c8b0-4177-a7db-6df73fc251c7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Sources\Actors">
+      <UniqueIdentifier>{28da0fab-ed00-43f6-84a9-b9562b5c4a13}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\Actors\Public">
+      <UniqueIdentifier>{0487d018-f7ef-4400-a56a-d5b5e985fb09}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\Actors\Private">
+      <UniqueIdentifier>{0697fa85-2ee2-4f65-a3f4-ee43734378c5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GameStateGameOver.cpp">
@@ -49,11 +58,14 @@
     <ClCompile Include="Menu.cpp">
       <Filter>Sources\Utilities</Filter>
     </ClCompile>
-    <ClCompile Include="Player.cpp">
-      <Filter>Sources</Filter>
-    </ClCompile>
     <ClCompile Include="DeveloperLevel.cpp">
       <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>Sources\Actors\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="Enemy.cpp">
+      <Filter>Sources\Actors\Private</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -93,9 +105,12 @@
     <ClInclude Include="CoreMinimal.h">
       <Filter>Sources\Core</Filter>
     </ClInclude>
-    <ClInclude Include="Player.h">
-      <Filter>Sources</Filter>
-    </ClInclude>
     <ClInclude Include="DeveloperLevel.h" />
+    <ClInclude Include="Player.h">
+      <Filter>Sources\Actors\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemy.h">
+      <Filter>Sources\Actors\Public</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

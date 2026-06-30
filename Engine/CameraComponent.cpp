@@ -20,7 +20,7 @@ CameraComponent::~CameraComponent()
 void CameraComponent::Update(float deltaTime)
 {
 	auto position = transform->GetWorldPosition();
-	auto rotation = transform->GetWorldRotaton();
+	auto rotation = transform->GetWorldRotation();
 
 	view->setCenter(Convert<sf::Vector2f, Vector2Df>(position));
 	view->setRotation(rotation);

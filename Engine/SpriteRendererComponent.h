@@ -1,6 +1,7 @@
 #pragma once
 #include "EngineAPI.h"
 #include "Component.h"
+#include "Vector.h"
 
 class TransformComponent;
 
@@ -22,9 +23,10 @@ public:
     void FlipY(bool flip);
 
 private:
+    Vector2Df scale;
     sf::Sprite* sprite;
     TransformComponent* transform;
-
+   
     bool isFlipX = false;
     bool isFlipY = false;
 };

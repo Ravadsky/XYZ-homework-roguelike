@@ -2,6 +2,9 @@
 #include "World.h"
 
 #include "Object.h"
+#include "PhysicsSystem.h"
+#include "TransformComponent.h"
+#include "AudioSystem.h"
 
 World* World::Instance()
 {
@@ -25,6 +28,17 @@ void World::Render()
 	}
 }
 
+void World::FixedUpdate(float deltaTime)
+{
+	fixedCounter += deltaTime;
+	if (fixedCounter > GetPhysicsSystem()->GetFixedDeltaTime())
+	{
+		fixedCounter -= GetPhysicsSystem()->GetFixedDeltaTime();
+		GetPhysicsSystem()->Update();
+		GetAudioSystem()->Update();
+	}
+}
+
 void World::LateUpdate()
 {
 	for (int i = (int)markedtoDestroyGameObjects.size() - 1; i >= 0; i--)
@@ -40,6 +54,13 @@ Object* World::CreateGameObject()
 	return newObject;
 }
 
+Object* World::CreateGameObject(std::string name)
+{
+	Object* newNamedObject = new Object(name);
+	gameObjects.push_back(newNamedObject);
+	return newNamedObject;
+}
+
 void World::DestroyGameObject(Object* gameObject)
 {
 	markedtoDestroyGameObjects.push_back(gameObject);
@@ -50,6 +71,20 @@ void World::Clear()
 	for (int i = (int)gameObjects.size() - 1; i >= 0; i--)
 	{
 		DestroyGameObjectImmediate(gameObjects[i]);
+	}
+}
+
+void World::Print() const
+{
+	for (auto& obj : gameObjects)
+	{
+		if (obj == nullptr)
+			continue;
+		
+		if (obj->GetComponent<TransformComponent>()->GetParent() == nullptr)
+		{
+			obj->Print();
+		}
 	}
 }
 
